@@ -18,7 +18,7 @@ class VotesControllerTest < ActionController::TestCase
 
   test "should create vote" do
     assert_difference('Vote.count') do
-      post :create, vote: { question: @vote.question }
+      post :create, vote: { question: @vote.question, user_id: @vote.user_id }
     end
 
     assert_redirected_to vote_path(assigns(:vote))
@@ -35,7 +35,7 @@ class VotesControllerTest < ActionController::TestCase
   end
 
   test "should update vote" do
-    patch :update, id: @vote, vote: { question: @vote.question }
+    patch :update, id: @vote, vote: { question: @vote.question, user_id: @vote.user_id }
     assert_redirected_to vote_path(assigns(:vote))
   end
 
